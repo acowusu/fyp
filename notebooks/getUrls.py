@@ -1,3 +1,7 @@
+import json
+import subprocess
+
+
 urls  = """
 {
     "data": {
@@ -30,16 +34,15 @@ for url in urls:
     filename = url.split(' => ')[0]
     url = url.split(' => ')[1]
     print(f"Downloading {filename} from {url}...")
-    !curl -s -o $download_dir/$filename $url
+    subprocess.run(['curl', '-s', '-o', f"{download_dir}/{filename}", url])
     print(f"Downloaded {filename} from {url}.")
     # Check if md5  checksum file
     if filename.endswith('.txt'):
         continue
     print(f"Extracting {filename}...")
-    !unzip -q -d $download_dir/$filename $download_dir/$filename
-    echo "Extracted $filename."
-    echo "Removing $filename..."
-    !rm $download_dir/$filename
-    echo "Removed $filename."
-done
-echo "All downloads and extractions completed."
+    subprocess.run(['unzip', '-q', '-d', f"{download_dir}/{filename}", f"{download_dir}/{filename}"])
+    print(f"Extracted {filename}.")
+    print(f"Removing {filename}...")
+    subprocess.run(['rm', f"{download_dir}/{filename}"])
+    print(f"Removed {filename}.")
+print("All downloads and extractions completed.\n")
