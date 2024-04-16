@@ -25,7 +25,7 @@ urls  = """
 urls = json.loads(urls)
 urls = urls['data']['request_dataset']
 
-download_dir = 'data'
+download_dir = '/rds/general/user/ao921/ephemeral/sign'
 for url in urls:
     filename = url.split(' => ')[0]
     url = url.split(' => ')[1]
