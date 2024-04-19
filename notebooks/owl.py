@@ -146,10 +146,11 @@ def debug_image(key):
 
 print(len(keys))
 
-for key in tqdm(keys[0:5]):
+# for key in tqdm(keys[0:5]):
+#     result = process_image(key)
+#     print(result)
+
+for key in tqdm(keys[:2522]):
     result = process_image(key)
-    print(result)
-# with open("output2.txt", "a") as f:
-#     for key in tqdm(keys):
-#         result = process_image(key)
-#         f.write(f"{key}: {result}\n")
+    with open("output_seg.txt", "a") as f:
+        f.write(f"{key}: {result}\n")
