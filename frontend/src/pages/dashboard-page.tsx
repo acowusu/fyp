@@ -10,8 +10,6 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
-  Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -24,7 +22,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import {ImagePreview} from "@/components/ui/image-preview"
 
 
   export function Dashboard() {

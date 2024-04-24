@@ -1,4 +1,4 @@
-import { Link, Outlet, NavLink } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { NavLinkButton } from "@/components/ui/nav-link-button"
 import { ModeToggle } from "@/components/ui/mode-toggle";
 export function LayoutV1() {
@@ -35,22 +35,13 @@ export function LayoutV1() {
 }
 
 import {
-  Bird,
   Book,
   Bot,
   Code2,
-  CornerDownLeft,
-  LifeBuoy,
-  Mic,
-  Paperclip,
-  Rabbit,
-  Settings,
   Settings2,
-  Share,
   SquareTerminal,
   SquareUser,
   Triangle,
-  Turtle,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
