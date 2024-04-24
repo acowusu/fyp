@@ -4,11 +4,6 @@ import {
     ResizablePanelGroup,
   } from "@/components/ui/resizable"
   
-import { ArrowUpRight } from "lucide-react"
-import { Link } from "react-router-dom";
-
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import {
   CardDescription,
   CardHeader,
