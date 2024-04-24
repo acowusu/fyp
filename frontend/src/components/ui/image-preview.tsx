@@ -1,12 +1,6 @@
-import { ImageDownIcon, Upload } from "lucide-react"
+import {  Upload } from "lucide-react"
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+
 
 export  function ImagePreview() {
   return (
