@@ -7,11 +7,14 @@ import {Home} from "@/pages/home-page"
 import { NoMatch } from '@/pages/not-found';
 import { Dashboard } from './pages/dashboard-page';
 import { Layout } from '@/layouts/layout';
+import { TooltipProvider } from "@/components/ui/tooltip";
 function App() {
 
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <TooltipProvider>
+
       <BrowserRouter>
 
       <Routes>
@@ -22,6 +25,7 @@ function App() {
         </Route>
       </Routes>
       </BrowserRouter>
+      </TooltipProvider>
       </ThemeProvider>
 
     </>
