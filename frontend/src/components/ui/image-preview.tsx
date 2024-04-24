@@ -11,31 +11,27 @@ import {
 export  function ImagePreview() {
   return (
   
-        <div className="grid gap-2 max-h-full">
+        <div className="grid gap-2 max-h-48">
           <img
-            className="aspect-movie w-full rounded-md object-cover"
+            className="aspect-movie  rounded-md object-scale-down"
             src="/sign.jpeg"
           />
           <div className="grid grid-cols-3 gap-2">
             <button>
               <img
                 alt="Product image"
-                className="aspect-square w-full rounded-md object-cover"
-                height="84"
+                className="aspect-square  rounded-md object-scale-down"
                 src="/sign.jpeg"
-                width="84"
               />
             </button>
             <button>
               <img
                 alt="Product image"
-                className="aspect-square w-full rounded-md object-cover"
-                height="84"
+                className="aspect-square  rounded-md object-scale-down"
                 src="/placeholder.svg"
-                width="84"
               />
             </button>
-            <button className="flex aspect-square w-full items-center justify-center rounded-md border border-dashed">
+            <button className="flex aspect-square items-center justify-center rounded-md border border-dashed">
               <Upload className="h-4 w-4 text-muted-foreground" />
               <span className="sr-only">Upload</span>
             </button>

@@ -160,8 +160,13 @@ import {ImagePreview} from "@/components/ui/image-preview"
         <ResizablePanel defaultSize={50}>
           <ResizablePanelGroup direction="vertical">
             <ResizablePanel defaultSize={25}>
+              {/* <ImagePreview/> */}
               <div className="flex h-full items-center justify-center p-6">
-              <ImagePreview/>
+              <img
+                alt="Product image"
+                className="aspect-movie h-full  bg-accent rounded-lg object-scale-down"
+                src="/sign.jpeg"
+              />
               </div>
             </ResizablePanel>
             <ResizableHandle />
