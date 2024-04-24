@@ -39,6 +39,7 @@ import {
   Bot,
   Code2,
   Settings2,
+  LifeBuoy,
   SquareTerminal,
   SquareUser,
   Triangle,
