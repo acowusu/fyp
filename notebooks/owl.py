@@ -7,6 +7,7 @@ import json
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 import cv2
+import time
 
 # objectProcessor = Owlv2Processor.from_pretrained("google/owlv2-base-patch16-ensemble")
 # objectModel = Owlv2ForObjectDetection.from_pretrained("google/owlv2-base-patch16-ensemble")
@@ -126,7 +127,7 @@ def process_image(key):
         data = json.load(f)
     image_file = '../ephemeral/sign/images/' + key + '.jpg'
     # image_file = f"../ephemeral/sign/images/{key}.jpg"
-    # boxes = run_object_detection(Image.open(image_file), "a traffic sign")
+#     boxes = run_object_detection(Image.open(image_file), "a photo  of a sign")
     boxes = run_segmentation_detection(Image.open(image_file), data )
     return iou_numpy(generate_mask_from_json(data), generate_mask_from_boxes(boxes, data["height"], data["width"]))
 
@@ -137,7 +138,7 @@ def debug_image(key):
         data = json.load(f)
     image_file = '../ephemeral/sign/images/' + key + '.jpg'
     # image_file = f"../ephemeral/sign/images/{key}.jpg"
-    boxes = run_object_detection(Image.open(image_file), "a traffic sign")
+    boxes = run_object_detection(Image.open(image_file), "a photo of a traffic sign")
     plt.imshow(Image.open(image_file))
     plt.imshow(generate_mask_from_boxes(boxes, data["height"], data["width"]), cmap='Blues', alpha=0.5)  # Use a grayscale colormap
     plt.imshow(generate_mask_from_json(data), cmap='grey', alpha=0.5)  # Use a grayscale colormap
@@ -150,7 +151,12 @@ print(len(keys))
 #     result = process_image(key)
 #     print(result)
 
-for key in tqdm(keys[:2522]):
+start_time = time.time()
+# count = 2522
+for key in tqdm(keys[:10]):
     result = process_image(key)
-    with open("output_seg.txt", "a") as f:
-        f.write(f"{key}: {result}\n")
+#     with open("output_zero_4.txt", "a") as f:
+#         f.write(f"{key}: {result}\n")
+end_time = time.time()
+execution_time = end_time - start_time
+print("Execution time:", execution_time / 10, "seconds")
